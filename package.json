@@ -1,0 +1,30 @@
+{
+  "name": "chaibackend",
+  "version": "1.0.0",
+  "description": "\"This is a backend learning app from Hitesh's chai and code channel\"",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/suprabhatkr/chaiBackend.git"
+  },
+  "keywords": [
+    "chai",
+    "javascript",
+    "nodejs",
+    "backend"
+  ],
+  "author": "Suprabhat Kumar",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/suprabhatkr/chaiBackend/issues"
+  },
+  "homepage": "https://github.com/suprabhatkr/chaiBackend#readme",
+  "dependencies": {
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2"
+  }
+}
