@@ -1,2 +1,2 @@
 # chaiBackend
-This is backend learning video using javascript as backend. 
+This is backend learning code using javascript as backend. 
