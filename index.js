@@ -2,14 +2,29 @@ require('dotenv').config()
 const express = require('express')
 const app = express()
 const port = process.env.PORT
+const fs = require('fs')
+const index_html = __dirname + '/index.html';
+
+var input_data = fs.readFileSync(index_html, 'utf8');
 
 app.get('/', (req, res) => {
-  res.send('Hello World!')
-})
+    // Send the HTML file using res.sendFile()
+    res.sendFile(index_html);
+  });
 
 app.get('/twitter', (req, res) => {
-    res.send('<h2> My twitter username is suprabhatkrsingh </h2>')
+    res.send('<h2> My twitter username is suprabhatsingh3 </h2>')
 })
+
+app.use(express.urlencoded({ extended: true }));
+
+app.post('/endpoint', (req, res) => {
+  // Process the request body here
+  console.log('Received POST request body:', req.body);
+  input_data = input_data.replace("<p class=\"postreq\">", "<p class=\"postreq\"><br>" + JSON.stringify(req.body));
+  fs.writeFileSync(index_html, input_data, 'utf-8');
+  res.send('Received POST request successfully\n');
+});
 
 var sampleJsonContent = {
     "glossary": {
